@@ -27,6 +27,20 @@ jobs:
       run: |
         echo "YEAR=$(date +%Y)" >> $GITHUB_ENV
         echo "MONTH=$(date +%m)" >> $GITHUB_ENV
+        const puppeteer = require("puppeteer");
+
+(async ()=>{
+    const browser = await puppeteer.launch(
+        {
+            headless:false
+        }
+    );
+    const page = await browser.newPage();
+    await page.goto("https://www.baidu.com");
+    
+    await browser.close();
+})();
+
 
     - name: Create folders
       run: |
