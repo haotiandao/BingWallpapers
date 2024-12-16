@@ -34,7 +34,7 @@ jobs:
 
     - name: Download Today's Bing Wallpaper
       run: |
-        IMAGE_URL=$(curl -sL "https://haotian.us.kg/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US" | jq -r '.images[0].url')
+        IMAGE_URL=$(curl -sL "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US" | jq -r '.images[0].url')
         FULL_IMAGE_URL="https://haotian.us.kg${IMAGE_URL/1920x1080/UHD}"
         FILENAME=$(date +'%Y%m%d').jpg
         echo "Downloading Bing Wallpaper: $FULL_IMAGE_URL"
